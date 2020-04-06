@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/arseniyepti/Timer/static/css/main.3d22d71d.chunk.css",
+    "main.js": "/arseniyepti/Timer/static/js/main.4ff36844.chunk.js",
+    "main.js.map": "/arseniyepti/Timer/static/js/main.4ff36844.chunk.js.map",
+    "runtime-main.js": "/arseniyepti/Timer/static/js/runtime-main.4a852862.js",
+    "runtime-main.js.map": "/arseniyepti/Timer/static/js/runtime-main.4a852862.js.map",
+    "static/css/2.ad8fe80d.chunk.css": "/arseniyepti/Timer/static/css/2.ad8fe80d.chunk.css",
+    "static/js/2.127028ef.chunk.js": "/arseniyepti/Timer/static/js/2.127028ef.chunk.js",
+    "static/js/2.127028ef.chunk.js.map": "/arseniyepti/Timer/static/js/2.127028ef.chunk.js.map",
+    "index.html": "/arseniyepti/Timer/index.html",
+    "precache-manifest.525d113459cc6924a49ea142c0bf4f48.js": "/arseniyepti/Timer/precache-manifest.525d113459cc6924a49ea142c0bf4f48.js",
+    "service-worker.js": "/arseniyepti/Timer/service-worker.js",
+    "static/css/2.ad8fe80d.chunk.css.map": "/arseniyepti/Timer/static/css/2.ad8fe80d.chunk.css.map",
+    "static/css/main.3d22d71d.chunk.css.map": "/arseniyepti/Timer/static/css/main.3d22d71d.chunk.css.map",
+    "static/js/2.127028ef.chunk.js.LICENSE.txt": "/arseniyepti/Timer/static/js/2.127028ef.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4a852862.js",
+    "static/css/2.ad8fe80d.chunk.css",
+    "static/js/2.127028ef.chunk.js",
+    "static/css/main.3d22d71d.chunk.css",
+    "static/js/main.4ff36844.chunk.js"
+  ]
+}
