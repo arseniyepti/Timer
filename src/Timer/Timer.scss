@@ -1,0 +1,23 @@
+.tab-timer {
+  display: flex;
+  background-color: #c7c7c8;
+  width: 300px;
+  height: 200px;
+  margin:  50px 50px;
+  color: white;
+  font-size: 24px;
+  border-radius: 20px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  &__timer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  }
+
+  &__start-button {
+  margin-right: 10px;
+  }
+}
