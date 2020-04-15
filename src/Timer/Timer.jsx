@@ -4,14 +4,10 @@ import './Timer.scss';
 import { Button } from 'antd';
 
 export default class Timer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.timerId = 0;
-    this.state = {
-      milliseconds: 0,
-      active: false,
-    };
-  }
+  state = {
+    milliseconds: 0,
+    active: false,
+  };
 
   setStateTimer = () => {
     this.setState(({ milliseconds }) => {
@@ -25,14 +21,16 @@ export default class Timer extends React.Component {
     const { milliseconds } = this.state;
     let timerId;
     const setTimer = () => {
-      const { active } = this.state;
       timerId = setTimeout(() => {
-        setTimer();
-        this.setStateTimer();
+        const { active } = this.state;
+        if (active) {
+          setTimer();
+          this.setStateTimer();
+        }
+        if (!active || milliseconds === 3600000) {
+          clearTimeout(timerId);
+        }
       }, 25);
-      if (!active || milliseconds > 3600000) {
-        clearTimeout(timerId);
-      }
     };
     this.setState(
       ({ active }) => ({ active: !active }),
@@ -57,9 +55,8 @@ export default class Timer extends React.Component {
     return (
       <div className="tab-timer">
         <div className="tab-timer__timer">
-          {`${min < 10 ? `0${min}` : min} : ${sec < 10 ? `0${sec}` : sec} : ${
-            millisec < 10 ? `0${millisec}` : millisec
-          }`}
+          {`${min < 10 ? `0${min}` : min} : ${sec < 10 ? `0${sec}` : sec} : 
+          ${millisec < 10 ? `0${millisec}` : millisec}`}
         </div>
         <div className="tab-timer__wrap-buttons">
           <Button
