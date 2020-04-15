@@ -53,10 +53,10 @@ export default class Countdown extends React.Component {
     });
   };
 
-  setStateDisabled = () => {
-    this.setState(({ active }) => ({
-      active: !active,
-    }));
+  setStateDisabled = (state) => {
+    this.setState({
+      active: state,
+    });
   };
 
   render() {

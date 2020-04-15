@@ -39,7 +39,7 @@ export default class CountdownResults extends React.Component {
 
   startTimer = () => {
     const { setStateDisabled, propMilliseconds } = this.props;
-    setStateDisabled();
+    setStateDisabled(true);
     this.setState({
       value: propMilliseconds,
     });
@@ -52,7 +52,7 @@ export default class CountdownResults extends React.Component {
           setTimer();
         } else {
           clearTimeout(timerId);
-          setStateDisabled();
+          setStateDisabled(false);
         }
       }, 25);
     };
