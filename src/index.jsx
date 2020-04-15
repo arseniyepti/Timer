@@ -18,7 +18,7 @@ ReactDOM.render(
     type="card"
     size="large"
     onChange={callback}
-    style={{ margin: '100px 300px' }}
+    style={{ margin: '100px 300px', minWidth: '700px' }}
   >
     <TabPane tab="Timer" key="1">
       <Timer />
