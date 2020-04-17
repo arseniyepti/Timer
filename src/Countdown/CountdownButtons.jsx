@@ -3,7 +3,7 @@ import './CountdownButtons.scss';
 import { Button } from 'antd';
 import PropTypes from 'prop-types';
 
-const CountdownButtons = ({ startTimer, resetTimer }) => (
+const CountdownButtons = ({ startTimer, resetTimer, textButton }) => (
   <div className="tab-countdown__wrap-buttons">
     <Button
       block
@@ -11,7 +11,8 @@ const CountdownButtons = ({ startTimer, resetTimer }) => (
       onClick={startTimer}
       type="primary"
       shape="round"
-      icon="Запустить/Пауза"
+      style={{ minWidth: '120px' }}
+      icon={textButton}
       size="large"
     />
     <Button
@@ -27,6 +28,7 @@ const CountdownButtons = ({ startTimer, resetTimer }) => (
 );
 
 CountdownButtons.propTypes = {
+  textButton: PropTypes.string.isRequired,
   startTimer: PropTypes.func.isRequired,
   resetTimer: PropTypes.func.isRequired,
 };

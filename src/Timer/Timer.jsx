@@ -2,9 +2,11 @@
 import React from 'react';
 import './Timer.scss';
 import { Button } from 'antd';
+import { getMinutes, getSeconds, getMilliseconds } from '../Utils/countDownUtils';
 
 export default class Timer extends React.Component {
   state = {
+    textButton: 'Запустить',
     milliseconds: 0,
     active: false,
   };
@@ -33,7 +35,10 @@ export default class Timer extends React.Component {
       }, 25);
     };
     this.setState(
-      ({ active }) => ({ active: !active }),
+      ({ active }) => ({
+        textButton: active ? 'Запустить' : 'Пауза',
+        active: !active,
+      }),
       () => {
         setTimer();
       }
@@ -48,15 +53,12 @@ export default class Timer extends React.Component {
   };
 
   render() {
-    const { milliseconds } = this.state;
-    const min = Math.floor(Math.floor(milliseconds / 1000) / 60);
-    const sec = Math.floor(milliseconds / 1000) - min * 60;
-    const millisec = Math.floor((milliseconds - sec * 1000 - min * 60 * 1000) / 10);
+    const { milliseconds, textButton } = this.state;
     return (
       <div className="tab-timer">
         <div className="tab-timer__timer">
-          {`${min < 10 ? `0${min}` : min} : ${sec < 10 ? `0${sec}` : sec} : 
-          ${millisec < 10 ? `0${millisec}` : millisec}`}
+          {`${getMinutes(milliseconds)} : ${getSeconds(milliseconds)} : 
+          ${getMilliseconds(milliseconds)}`}
         </div>
         <div className="tab-timer__wrap-buttons">
           <Button
@@ -64,7 +66,8 @@ export default class Timer extends React.Component {
             onClick={this.startTimer}
             type="primary"
             shape="round"
-            icon="Запустить/Пауза"
+            style={{ minWidth: '120px' }}
+            icon={textButton}
             size="large"
           />
           <Button
